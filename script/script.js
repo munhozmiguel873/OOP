@@ -44,7 +44,8 @@ btn.addEventListener('click', () => {
                 🕒 ${novaFoto.dataCriacao.toLocaleString()}
             </div>
 
-            <div class="btn-local" id="btn-local">📍 Usar minha localização</div>
+            <div class="btn-local" id="btn-local">
+                📍 Usar minha localização</div>            
             </div>
     `;
 
