@@ -13,8 +13,8 @@ console.log(btn);
 
 
 btn.addEventListener('click', () => {
-    const url = document.querySelector('#url').value;
-    const legenda = document.querySelector('#ipt-legenda').value;
+    const url = document.querySelector('#ipt-url').value;
+    const legenda = document.querySelector('#ipt-title').value;
     const lat = parseFloat(document.querySelector('#ipt-lat').value) || 0;
     const lon = parseFloat(document.querySelector('#ipt-lon').value) || 0;
 
@@ -25,14 +25,14 @@ btn.addEventListener('click', () => {
     const card = document.createElement('div');
     card.className = 'card-foto';
     card.innerHTML = `
-        <img src="${novaFoto.url} alt=${novaFoto.legenda}">
-<div class="card.info">
- <h3>${novaFoto.legenda}</h3>
- <p>${novaFoto.resumo}</p>
- <div>
-🎈${novaFoto.localizacao}
- </div>
- </div> 
+        <img src="${novaFoto.url}" alt="${novaFoto.legenda}">
+        <div class="card.info">
+            <h3>${novaFoto.legenda}</h3>
+            <p>${novaFoto.resumo}</p>
+            <div>
+                🎈${novaFoto.localizacao}
+            </div>
+         </div> 
  `;
     galeria.prepend(card);
     // Limpar forms
