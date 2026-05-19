@@ -1,8 +1,8 @@
 class Foto {
-    constructor(url, legenda, descricao, lat, lon) {
+    constructor(url, legenda, resumo, lat, lon) {
         this.url = url;
         this.legenda = legenda;
-        this.descricao = descricao;
+        this.resumo = resumo;
         this.localizacao = { lat, lon };
         this.dataCriacao = new Date();
     }
@@ -13,16 +13,18 @@ const galeria = document.querySelector("#galeria");
 
 btn.addEventListener('click', () => {
     const url = document.querySelector('#ipt-url').value;
-    const legenda = document.querySelector('#ipt-title').value;
-    const descricao = document.querySelector('#ipt-desc').value;
+    const legenda = document.querySelector('#ipt-legenda').value;
+    const resumo = document.querySelector('#ipt-resumo').value;
+
     const lat = parseFloat(document.querySelector('#ipt-lat').value) || 0;
     const lon = parseFloat(document.querySelector('#ipt-lon').value) || 0;
 
     if (!url || !legenda) {
-        return alert("Por favor, insira a URL e a legenda da foto.");
+        alert("Por favor, insira a URL e a legenda.");
+        return;
     }
 
-    const novaFoto = new Foto(url, legenda, descricao, lat, lon);
+    const novaFoto = new Foto(url, legenda, resumo, lat, lon);
 
     const card = document.createElement('div');
     card.className = 'card-foto';
@@ -32,16 +34,19 @@ btn.addEventListener('click', () => {
         
         <div class="card-info">
             <h3>${novaFoto.legenda}</h3>
-            <p>${novaFoto.descricao}</p>
+            <p>${novaFoto.resumo}</p>
 
-            <div>
-                🎈 Lat: ${novaFoto.localizacao.lat}, Lon: ${novaFoto.localizacao.lon}
+            <div class="card-footer">
+                📍 Lat: ${novaFoto.localizacao.lat} | Lon: ${novaFoto.localizacao.lon}
+            </div>
+
+            <div class="card-small">
+                🕒 ${novaFoto.dataCriacao.toLocaleString()}
             </div>
         </div>
     `;
 
     galeria.prepend(card);
 
-    // limpar inputs
     document.querySelectorAll('input').forEach(i => i.value = "");
 });

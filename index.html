@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+    <title>🌍 Explorer Log</title>
 </head>
+
 <body>
     <div class="container">
+
         <header>
-            <h1>🌍Explorer log</h1>
-            <p>Registre suas aventuras!!</p>
-            </header>
-    
+            <h1>🌍 Explorer Log</h1>
+            <p>Registre suas aventuras!! ✈️</p>
+        </header>
+
         <div class="form-card">
+
             <input type="text" id="ipt-url" placeholder="URL da imagem">
-            <input type="text" id="ipt-title" placeholder="Onde você estava?">
-            <input type="text" id="ipt-desc" placeholder="Conte um pouco sobre a aventura...">
+
+            <input type="text" id="ipt-legenda" placeholder="Onde você estava?">
+
+            <input type="text" id="ipt-resumo" placeholder="Conte um pouco sobre a aventura...">
+
             <div class="row">
                 <input type="number" id="ipt-lat" placeholder="Latitude">
                 <input type="number" id="ipt-lon" placeholder="Longitude">
-                </div>
-            <button id="btn-adicionar">Adicionar ao Mural</button>
             </div>
-            <div id="galeria" class="grid-galeria">
-            <!--Os cards serão injetados aqui-->
+
+            <button id="btn-adicionar">Adicionar ao Mural</button>
+
+            <!-- 🌍 botão extra de localização atual -->
+            <button id="btn-local">📍 Usar minha localização</button>
+
         </div>
+
+        <div id="galeria" class="grid-galeria">
+            <!-- Cards aqui -->
         </div>
+
     </div>
-        <script src="script/script.js"></script>
+
+    <script src="script/script.js"></script>
 </body>
+
 </html>
