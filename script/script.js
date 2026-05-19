@@ -43,7 +43,9 @@ btn.addEventListener('click', () => {
             <div class="card-small">
                 🕒 ${novaFoto.dataCriacao.toLocaleString()}
             </div>
-        </div>
+
+            <div class="btn-local" id="btn-local">📍 Usar minha localização</div>
+            </div>
     `;
 
     galeria.prepend(card);
